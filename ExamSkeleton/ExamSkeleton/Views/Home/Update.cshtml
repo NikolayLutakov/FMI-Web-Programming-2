@@ -1,0 +1,38 @@
+﻿@model ExamSkeleton.Models.UpdateVM
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Update</h1>
+<a href="/Home/Index">back</a>
+
+<form action="/Home/Update" method="post">
+    @Html.HiddenFor(m => m.Id)
+    <div>
+        <div>ColumnOne:</div>
+        <div>@Html.TextBoxFor(m => m.ColumnOne)</div>
+        <div>@Html.ValidationMessageFor(m => m.ColumnOne)</div>
+    </div>
+    <div>
+        <div>ColumnTwo:</div>
+        <div">@Html.TextBoxFor(m => m.ColumnTwo)
+    </div>
+    <div>@Html.ValidationMessageFor(m => m.ColumnTwo)</div>
+
+    <div>
+        <div>ColumnThree:</div>
+        <div>@Html.TextBoxFor(m => m.ColumnThree)</div>
+        <div>@Html.ValidationMessageFor(m => m.ColumnThree)</div>
+    </div>
+    <div>
+        <div>ColumnFour:</div>
+        <div>@Html.TextBoxFor(m => m.ColumnFour)</div>
+        <div>@Html.ValidationMessageFor(m => m.ColumnFour)</div>
+    </div>
+
+    <div>
+        <div><input type="submit" value="Update" /></div>
+    </div>
+
+
+</form>

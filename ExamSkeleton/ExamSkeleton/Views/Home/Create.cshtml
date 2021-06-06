@@ -1,0 +1,39 @@
+﻿@model ExamSkeleton.Models.CreateVM
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h1>Create</h1>
+    <a href="/Home/Index">back</a>
+</div>
+<form action="/Home/Create" method="post">
+
+    <div>
+        <div>ColumnOne:</div>
+        <div>@Html.TextBoxFor(m => m.ColumnOne)</div>
+        <div>@Html.ValidationMessageFor(m => m.ColumnOne)</div>
+    </div>
+    <div>
+        <div>ColumnTwo:</div>
+        <div">@Html.TextBoxFor(m => m.ColumnTwo)
+    </div>
+    <div>@Html.ValidationMessageFor(m => m.ColumnTwo)</div>
+
+    <div>
+        <div>ColumnThree:</div>
+        <div>@Html.TextBoxFor(m => m.ColumnThree)</div>
+        <div>@Html.ValidationMessageFor(m => m.ColumnThree)</div>
+    </div>
+    <div>
+        <div>ColumnFour:</div>
+        <div>@Html.TextBoxFor(m => m.ColumnFour)</div>
+        <div>@Html.ValidationMessageFor(m => m.ColumnFour)</div>
+    </div>
+
+    <div>
+        <div><input type="submit" value="Create" /></div>
+    </div>
+
+
+</form>

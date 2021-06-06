@@ -1,0 +1,47 @@
+﻿.section {
+    display: block;
+    clear: both;
+}
+
+.left {
+    float:left;
+}
+
+.right {
+    float:right
+}
+
+.menu {
+    display: block;
+    clear: both;
+    list-style: none;
+}
+
+.menu li {
+    float:left;
+    margin:0 10px 0 10px;
+}
+
+.grid .row {
+    display:block;
+    clear:both;
+}
+
+.grid .row .col-1 {
+    float:left;
+    width:100px;
+}
+
+.grid .row .col-2 {
+    float:left;
+    width:200px;
+}
+
+.grid .row .col-3 {
+    float:left;
+    width:300px;
+}
+
+.field-validation-error {
+    color: red;
+}

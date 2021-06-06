@@ -1,0 +1,120 @@
+﻿.tileCenter{
+    text-align:center;
+}
+
+.adText{
+    text-align:justify;
+    font-weight:bold;
+}
+
+.left{
+    float:left;
+    clear:both;
+}
+
+.right{
+    float:right;
+    clear:both;
+}
+
+.author{
+    font-style:italic;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;    
+    text-decoration: none;
+    border: solid 1px black;
+    padding: 5px 10px;
+}
+.ordinaryBtn {
+    background-color: #EFEFEF;
+    color: initial;
+}
+
+.likeBtn {
+    background-color: cornflowerblue;
+    color: initial;
+}
+
+.unlikeBtn {
+    background-color: rosybrown;
+    color: initial;
+}
+
+.deleteBtn {
+    background-color: red;
+    color:white;
+}
+
+.backBtn{
+    background-color: none;
+}
+
+.createBtn {
+    background-color: darkseagreen;
+    color: white;
+}
+
+.menu{
+    display:block;
+    clear:both;
+    list-style:none
+}
+
+.menu li{
+    float:left;
+    margin:0 10px 0 10px;
+}
+
+li:last-child {
+    float: right; /* last li item */
+    top: 10px;
+}
+
+.offset{
+    padding-left:20px;
+}
+
+.errorMsg{
+    color:red;
+}
+
+.section {
+    float: left;
+    width: 100%;
+    clear: both;
+}
+
+.grid .cell {
+    float: left;
+    width: 46%;
+    padding: 0em 1.5em 0em 1.5em;
+    min-height: 200px;
+}
+
+.grid .row {
+    float: left;
+    width: 100%;
+    clear: both;
+}
+
+.grid .row .col-1 {
+    float:left;
+    width:100px;
+}
+
+.grid .row .col-2 {
+    float: left;
+    width: 200px;
+}
+
+.grid .row .col-3 {
+    float: left;
+    width: 300px;
+}
+
+.form-control{
+    resize:none;
+}

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>Login Sample Web App</h1>
+        <span>Hello Annonymous</span>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <a href="/Home/Index">HOME</a>
+            </li>
+            <li>
+                <a href="/Home/Login">LOGIN</a>
+            </li>
+            <li>
+                <a href="/Home/CheckboxesTest">CHECKBOXES</a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <fieldset>
+            <legend>Login</legend>
+            <form action="/Home/Login" method="post">
+                <div class="grid">
+                    <div class="row">
+                        <div class="col-1">Username:</div>
+                        <div class="col-2"><input type="text" name="Username" value="@ViewData["Username"]" /></div>
+                        <div class="col-3"><span class="error">@ViewData["UsernameError"]</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">Password:</div>
+                        <div class="col-2"><input type="password" name="Password" value="@ViewData["Password"]" /></div>
+                        <div class="col-3"><span class="error">@ViewData["PasswordError"]</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <span class="error">@ViewData["AuthenticationError"]</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3"><input type="submit" value="Login" /></div>
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+</body>
+</html>

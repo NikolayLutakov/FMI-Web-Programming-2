@@ -1,0 +1,58 @@
+﻿@model SmallAds.Models.Users.UpdateVM
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="tileCenter">User Update</h1>
+<div class="grid offset">
+    <br />
+    <div><a class="button backBtn" href="/Users/Index">Back</a></div>
+    <form action="/Users/Update" method="post">
+        <div>
+            @Html.HiddenFor(m => m.Id)
+            @Html.HiddenFor(m => m.Username)
+            <div class="row">
+                <div class="col-1">Password:</div>
+                <div class="col-2">@Html.PasswordFor(m => m.Password)</div>
+                <div class="col-2 errorMsg">@Html.ValidationMessageFor(m => m.Password)</div>
+            </div>
+            <div class="row">
+                <div class="col-1">Email:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.Email)</div>
+                <div class="col-2 errorMsg">@Html.ValidationMessageFor(m => m.Email)</div>
+                <div class="col-3 errorMsg">@Html.ValidationMessage("EmailTaken")</div>
+            </div>
+            <div class="row">
+                <div class="col-1">First Name:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.FirstName)</div>
+                <div class="col-2 errorMsg">@Html.ValidationMessageFor(m => m.FirstName)</div>
+            </div>
+            <div class="row">
+                <div class="col-1">Last Name:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.LastName)</div>
+                <div class="col-2 errorMsg">@Html.ValidationMessageFor(m => m.LastName)</div>
+            </div>
+            <div class="row">
+                <div class="col-1">Phone:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.Phone)</div>
+                <div class="col-2 errorMsg">@Html.ValidationMessageFor(m => m.Phone)</div>
+            </div>
+            <div class="row">
+                <div class="col-1">Town:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.Town)</div>
+                <div class="col-2 errorMsg">@Html.ValidationMessageFor(m => m.Town)</div>
+            </div>
+            <div class="row">
+                <div class="col-1">Address:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.Address)</div>
+                <div class="col-2 errorMsg">@Html.ValidationMessageFor(m => m.Address)</div>
+            </div>
+
+            <div class="row">
+                <br />
+                <div class="col-3"><input type="submit" value="Update" /></div>
+            </div>
+        </div>
+    </form>
+</div>

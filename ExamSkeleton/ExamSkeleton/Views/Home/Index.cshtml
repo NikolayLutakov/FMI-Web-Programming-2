@@ -1,0 +1,23 @@
+﻿@model ExamSkeleton.Models.IndexVM
+@using ExamSkeleton.Data.Entities
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+<div><a href="/Home/Create">NEW</a></div>
+<div>
+    @{ foreach (SomeEntity someEntity in Model.SomeEntities)
+        {
+        <ul>
+            <li>@someEntity.ColumnOne;</li>
+            <li>@someEntity.ColumnTwo;</li>
+            <li>@someEntity.ColumnThree;</li>
+            <li>@someEntity.ColumnFour;</li>
+            <li><a href="/Home/Update?id=@someEntity.Id">Update</a>
+            <a href="/Home/Delete?id=@someEntity.Id">Delete</a></li>
+        </ul>
+        }
+    }
+</div>

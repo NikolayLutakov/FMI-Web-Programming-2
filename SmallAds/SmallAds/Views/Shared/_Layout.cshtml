@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNetCore.Http
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/Styles.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="section">
+        <ul class="menu">
+            @if (this.Context.Session.GetString("LoggedUserId") != null)
+            {
+                <li><a class="button" href="/Users/Index">Home</a></li>
+                <li><a class="button" href="/Home/Logout">Logout</a></li>
+            }
+
+            @if (this.Context.Session.GetString("LoggedUserId") == null)
+            {
+                <li><a class="button" href="/Home/Index">Home</a></li>
+                <li><a class="button" href="/Home/Login">Login</a></li>
+                <li><a class="button" href="/Users/Create">Register</a></li>
+            }
+            <li>
+                @if (this.Context.Session.GetString("LoggedUserUsername") != null)
+                {
+                    <div>Logged User: @this.Context.Session.GetString("LoggedUserUsername")</div>
+                }               
+            </li>
+        </ul>
+    </div>
+    <div class=" section">
+        @RenderBody()
+    </div>
+</body>
+</html>

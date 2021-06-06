@@ -1,0 +1,31 @@
+﻿@model SmallAds.Models.Ads.CreateAdVM
+@using Microsoft.AspNetCore.Http
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="tileCenter">Create Ad</h1>
+<div class="grid offset">
+    <div><a class="button backBtn" href="/Users/Index">Back</a></div>
+    <br />
+    <br />
+    <form action="/Ads/Create" method="post">
+        @Html.HiddenFor(m => m.CreatorId)
+        <div class="row">
+            <div class="col-1">Ad Title:</div>
+            <div class="col-2">@Html.TextBoxFor(m => m.Title)</div>
+            <div class="errorMsg col-2">@Html.ValidationMessageFor(m => m.Title)</div>
+        </div>
+        <div class="row">
+            <div class="col-1">Ad Text:</div>
+            <div class="col-2">@Html.TextAreaFor(m => m.Text, new { @class = "form-control", @cols = 20, @rows = 10 })</div>
+            <div class="errorMsg col-2">@Html.ValidationMessageFor(m => m.Text)</div>
+        </div>
+        <div class="row">
+            <br />
+            <div class="col-3"><input type="submit" value="Create" /></div>
+        </div>
+
+    </form>
+</div>

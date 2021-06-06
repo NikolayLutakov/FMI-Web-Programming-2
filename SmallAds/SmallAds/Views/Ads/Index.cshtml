@@ -1,0 +1,31 @@
+﻿@model SmallAds.Models.Ads.IndexAdVM
+@using SmallAds.Entities
+@{
+    ViewBag.Title = "AdIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="offset">My Ads</h1>
+<div class="section">
+    <div class="offset">
+        <a class="button backBtn" href="/Users/Index">Back</a>
+        <a class="button createBtn" href="/Ads/Create">Create new add</a>
+    </div>
+    <div class="grid">
+        @foreach (Ad item in Model.Ads)
+        {
+            <div class="cell">
+                <h2 class="tileCenter">
+                    @item.Title
+                </h2>
+                <p class="adText">
+                    @item.Text
+                </p>
+                <div>
+                    <a class="button ordinaryBtn" href="/Ads/Update?id=@item.Id">Edit</a>
+                    <a class="button deleteBtn" href="/Ads/Delete?id=@item.Id">Delete</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

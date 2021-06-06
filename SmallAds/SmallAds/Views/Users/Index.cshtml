@@ -1,0 +1,56 @@
+﻿@model SmallAds.Models.Users.IndexVM
+@using SmallAds.Entities
+@{
+    ViewBag.Title = "UsersIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="section">
+    <ul class="menu">
+        <li><a class="button createBtn" href="/Ads/Create?id=@Model.User.Id">CreateAd</a></li>
+        <li><a class="button ordinaryBtn" href="/Ads/Index">My Ads</a></li>
+        <li><a class="button ordinaryBtn" href="/Ads/MyLikes">My Likes</a></li>
+        <li><a class="button ordinaryBtn" href="/Users/Update?id=@Model.User.Id">Update my account</a></li>
+        <li><a class="button deleteBtn" href="/Users/Delete?id=@Model.User.Id" onclick="return confirm('Are you sure you want to delete your account?')">Delete my account</a></li>
+    </ul>
+    <div class="grid">
+        @foreach (Ad ad in Model.Ads)
+        {
+            <div class="cell">
+                <h2 class="tileCenter">
+                    @ad.Title
+                </h2>
+                <p class="adText">
+                    @ad.Text
+                </p>
+                <div class="right author">
+                    Author: @ad.Creator.Username
+                </div>
+                <div class="right">Likes: @ad.Likes.Count</div>
+
+                @{
+                    bool f = false;
+                    @foreach (Like like in ad.Likes)
+                    {
+                        f = false;
+                        @if (like.UserId == Model.User.Id)
+                        {
+                            { f = true; }
+                        }
+
+                    }
+                    if (f == true)
+                    {
+                        <div>
+                            <a class="button unlikeBtn" href="/Ads/Unlike?AdId=@ad.Id&callView=usersIndex">Unlike</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div><div><a class="button likeBtn" href="/Ads/Like?AdId=@ad.Id&callView=usersIndex">Like</a></div></div>
+                    }
+
+                }
+            </div>
+        }
+    </div>
+</div>

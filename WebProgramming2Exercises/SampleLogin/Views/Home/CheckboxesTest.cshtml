@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>Login Sample Web App</h1>
+        <span>Hello Annonymous</span>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <a href="/Home/Index">HOME</a>
+            </li>
+            <li>
+                <a href="/Home/Login">LOGIN</a>
+            </li>
+            <li>
+                <a href="/Home/CheckboxesTest">CHECKBOXES</a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <form action="/Home/CheckboxesTest" method="post">
+            IsAdmin: <input type="checkbox" name="isAdmin" value="True" />
+
+            <h1>User Groups</h1>
+            Members <input type="checkbox" name="groups" value="5" />
+            Users <input type="checkbox" name="groups" value="10" />
+            Moderators <input type="checkbox" name="groups" value="12" />
+
+            <input type="submit" value="Save" />
+        </form>
+    </div>
+</body>
+</html>  

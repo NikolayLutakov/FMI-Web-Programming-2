@@ -1,0 +1,23 @@
+﻿.grid .row {
+    display: block;
+    clear: both;
+}
+
+.grid .row .col-1 {
+    float: left;
+    width: 100px;
+}
+
+.grid .row .col-2 {
+    float: left;
+    width: 200px;
+}
+
+.grid .row .col-3 {
+    float: left;
+    width: 300px;
+}
+
+.error{
+    color: red;
+}

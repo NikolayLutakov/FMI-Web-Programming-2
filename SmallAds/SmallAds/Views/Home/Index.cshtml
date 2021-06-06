@@ -1,0 +1,28 @@
+﻿@model SmallAds.Models.Home.HomeIndexVM
+@using SmallAds.Entities
+@{
+    Layout = "~/Views/SHared/_Layout.cshtml";
+    ViewBag.Title = "Home";
+}
+
+<div class="grid">
+    @foreach (Ad ad in Model.Ads)
+    {
+
+        <div class="cell">
+            <h2 class="tileCenter">
+                @ad.Title
+            </h2>
+            <p class="adText">
+                @ad.Text
+            </p>
+            <div class="right author">
+                Author: @ad.Creator.Username
+            </div>
+            <div class="right">
+                Likes: @ad.Likes.Count
+            </div>
+        </div>
+
+    }
+</div>
